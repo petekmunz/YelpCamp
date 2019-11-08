@@ -1,6 +1,6 @@
 # YelpCamp
 
-This is a fullstack Node-js Web application, that allows users to add, and dicover awesome campgrounds from all over the world.
+This is a fullstack Node-js Web application, that allows users to add, and discover awesome campgrounds from all over the world.
 
 ## Overview
 
