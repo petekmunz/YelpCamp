@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YelpCamp</title>
+    <script src="https://kit.fontawesome.com/888157d820.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+    <nav id="mainNavbar" class="navbar navbar-dark bg-dark navbar-expand-md">
+        <div class="container">
+            <a href="/" class="navbar-brand">YelpCamp</a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navLinks">
+                <ul class="navbar-nav ml-auto">
+                    <% if (!currentUser){ %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Sign Up <i class="fas fa-user-plus"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login <i class="fas fa-sign-in-alt"></i></a>
+                    </li>
+                    <% } else{ %>
+                    <li class="nav-item">
+                        <span class="nav-link">Signed in as <%= currentUser.username %></span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } %>
+
+        <% if(success && success.length > 0){ %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+        <% } %>
+    </div>
